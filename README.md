@@ -52,3 +52,8 @@ ls - list contents of directory
         * -a - show all files (including hidden)
         * -l - long listing (show extended info for file)
 
+# Manipulating streams
+
+\> - redirect stdin to file (overwriting it)  
+>> - redirect stdin to file (appending)  
+| - redirect output of left-hand command as input to right-hand command  
