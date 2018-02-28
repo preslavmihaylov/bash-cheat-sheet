@@ -63,6 +63,7 @@ grep - command for filtering lines from stream
 
 -i - case-insensitive search  
 -n - show line numbers of matched lines  
+-f - read expression from file  
 -e - grep for several expressions.  
 * e.g. grep -e "hello" -e "world" hello.txt
 
