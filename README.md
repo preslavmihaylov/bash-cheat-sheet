@@ -52,6 +52,12 @@ ls - list contents of directory
   * -a - show all files (including hidden)
   * -l - long listing (show extended info for file)
 
+cut - cut file into columns  
+* Options:  
+    * -f<num> - the column to display  
+    * -d<delim> - the delimiter to use  
+* e.g. cut -f1 -d: passwd  
+
 # Grepping
 
 grep - command for filtering lines from stream  
