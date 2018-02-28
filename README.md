@@ -52,8 +52,23 @@ ls - list contents of directory
   * -a - show all files (including hidden)
   * -l - long listing (show extended info for file)
 
+# Grepping
+
+grep - command for filtering lines from stream  
+* e.g. grep "hello" hello.txt
+* Can use regular expressions
+    * e.g. grep "^hello$" hello.txt
+
+### Useful options
+
+-i - case-insensitive search  
+-n - show line numbers of matched lines  
+-e - grep for several expressions.  
+* e.g. grep -e "hello" -e "world" hello.txt
+
 # Manipulating streams
 
 \> - redirect stdin to file (overwriting it)  
 >> - redirect stdin to file (appending)  
 | - redirect output of left-hand command as input to right-hand command  
+
