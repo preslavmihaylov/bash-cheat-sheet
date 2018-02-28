@@ -69,6 +69,9 @@ grep - command for filtering lines from stream
 -e - grep for several expressions.  
 * e.g. grep -e "hello" -e "world" hello.txt
 
+egrep == grep -E  
+fgrep == grep -F  
+
 # Manipulating streams
 
 \> - redirect stdin to file (overwriting it)  
