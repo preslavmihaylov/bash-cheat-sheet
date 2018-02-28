@@ -36,7 +36,7 @@ tail - show last lines of file
 grep - search for pattern in file/text stream  
 
 find - find something in the system  
-* Usage: find <location> <flags>  
+* Usage: find \<location\> \<flags\>  
 * Flags: -name, -perm, -type  
 
 whereis - find location of binary  
@@ -82,7 +82,7 @@ fgrep == grep -F
 sed - command for manipulating streams
 
 Basic usage:
-* sed '<range><option>/<pattern>/<flags>'
+* sed '\<range\>\<option\>/\<pattern\>/\<flags\>'
     * range - define range for sed to operate on
         * e.g. % - operate on all lines
         * e.g. 2, - operate on lines [2, $)
@@ -103,6 +103,6 @@ Basic usage:
 # Manipulating streams
 
 \> - redirect stdin to file (overwriting it)  
->> - redirect stdin to file (appending)  
-| - redirect output of left-hand command as input to right-hand command  
+\>\> - redirect stdin to file (appending)  
+\| - redirect output of left-hand command as input to right-hand command  
 
