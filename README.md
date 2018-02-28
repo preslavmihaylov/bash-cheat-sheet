@@ -78,6 +78,28 @@ grep - command for filtering lines from stream
 egrep == grep -E  
 fgrep == grep -F  
 
+# Sed stream editor
+sed - command for manipulating streams
+
+Basic usage:
+* sed '<range><option>/<pattern>/<flags>'
+    * range - define range for sed to operate on
+        * e.g. % - operate on all lines
+        * e.g. 2, - operate on lines [2, $)
+        * e.g. ,5 - operate on lines (^, 5]
+        * e.g. 2,5 - operate on lines [2, 5]
+    * option - can be one of the following
+        * s - substiture matched pattern with something else
+        * d - delete line where pattern is found
+        * i - insert after line where pattern matched
+    * pattern - a single regex expression
+        * if s option used - use <pattern>/<replaced> instead of simply <pattern>
+    * flags
+        * g - global match. Match more than one pattern on a line if applicable.
+        * c - ask before performing operation
+        * w <file> - write matched patterns operation to file
+
+
 # Manipulating streams
 
 \> - redirect stdin to file (overwriting it)  
