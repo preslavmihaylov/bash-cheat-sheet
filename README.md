@@ -65,6 +65,7 @@ grep - command for filtering lines from stream
 -n - show line numbers of matched lines  
 -f - read expression from file  
 -E - extended RegEx  
+-F - don't use regex. Treat expression literally  
 -e - grep for several expressions.  
 * e.g. grep -e "hello" -e "world" hello.txt
 
