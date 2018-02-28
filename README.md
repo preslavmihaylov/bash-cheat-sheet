@@ -24,10 +24,10 @@ Ctrl-r - backwards search
 # Useful linux commands
 
 wc - word count  
-    * wc -l - total lines of file  
+* wc -l - total lines of file  
 
 cat - concat contents of file  
-    * E.g. cat file1 file2 - concatenates output of both files
+* E.g. cat file1 file2 - concatenates output of both files
 
 head - show first lines of file  
 
@@ -36,8 +36,8 @@ tail - show last lines of file
 grep - search for pattern in file/text stream  
 
 find - find something in the system  
-    * Usage: find <location> <flags>  
-    * Flags: -name, -perm, -type  
+* Usage: find <location> <flags>  
+* Flags: -name, -perm, -type  
 
 whereis - find location of binary  
 
@@ -48,9 +48,9 @@ pwd - current working directory
 diff - check difference between two files  
 
 ls - list contents of directory
-    * Useful Options:
-        * -a - show all files (including hidden)
-        * -l - long listing (show extended info for file)
+* Useful Options:
+  * -a - show all files (including hidden)
+  * -l - long listing (show extended info for file)
 
 # Manipulating streams
 
