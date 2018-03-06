@@ -60,7 +60,7 @@ cut - cut file into columns
   
 tee - read from stdin and write to file AND stdout  
 * Usage:  
-    * <command> | tee <file1> <file2>...  
+    * \<command\> | tee \<file1\> \<file2\>...  
 * Useful options:  
     * -a - append instead of overwriting  
   
