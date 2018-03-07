@@ -112,3 +112,11 @@ Basic usage:
 \>\> - redirect stdin to file (appending)  
 \| - redirect output of left-hand command as input to right-hand command  
 
+# Viewing Hardware Information
+
+lscpu - info about CPU  
+lsmod - info about currently loaded kernel modules  
+lsblk - info about block devices (e.g. partitions)  
+lspci - info about pci devices (peripherals & controllers)  
+lsscsi - info about hard disk/ssd devices  
+lsusb - info about usb devices  
