@@ -83,40 +83,65 @@ grep - command for filtering lines from stream
   
 egrep == grep -E  
 fgrep == grep -F  
-
-# Sed stream editor
-sed - command for manipulating streams
-
-Basic usage:
-* sed '\<range\>\<option\>/\<pattern\>/\<flags\>'
-    * range - define range for sed to operate on
-        * e.g. % - operate on all lines
-        * e.g. 2, - operate on lines [2, $)
-        * e.g. ,5 - operate on lines (^, 5]
-        * e.g. 2,5 - operate on lines [2, 5]
-    * option - can be one of the following
-        * s - substiture matched pattern with something else
-        * d - delete line where pattern is found
-        * i - insert after line where pattern matched
-    * pattern - a single regex expression
-        * if s option used - use <pattern>/<replaced> instead of simply <pattern>
-    * flags
-        * g - global match. Match more than one pattern on a line if applicable.
-        * c - ask before performing operation
-        * w <file> - write matched patterns operation to file
-
-
-# Manipulating streams
-
+  
+# Sed stream editor  
+sed - command for manipulating streams  
+  
+Basic usage:  
+* sed '\<range\>\<option\>/\<pattern\>/\<flags\>'  
+    * range - define range for sed to operate on  
+        * e.g. % - operate on all lines  
+        * e.g. 2, - operate on lines [2, $)  
+        * e.g. ,5 - operate on lines (^, 5]  
+        * e.g. 2,5 - operate on lines [2, 5]  
+    * option - can be one of the following  
+        * s - substiture matched pattern with something else  
+        * d - delete line where pattern is found  
+        * i - insert after line where pattern matched  
+    * pattern - a single regex expression  
+        * if s option used - use <pattern>/<replaced> instead of simply <pattern>  
+    * flags  
+        * g - global match. Match more than one pattern on a line if applicable.  
+        * c - ask before performing operation  
+        * w <file> - write matched patterns operation to file  
+  
+  
+# Manipulating streams  
+  
 \> - redirect stdin to file (overwriting it)  
 \>\> - redirect stdin to file (appending)  
 \| - redirect output of left-hand command as input to right-hand command  
-
-# Viewing Hardware Information
-
+  
+# Viewing Hardware Information  
+  
 lscpu - info about CPU  
 lsmod - info about currently loaded kernel modules  
 lsblk - info about block devices (e.g. partitions)  
 lspci - info about pci devices (peripherals & controllers)  
 lsscsi - info about hard disk/ssd devices  
 lsusb - info about usb devices  
+  
+# Managing shared libaries  
+  
+ldd <executable> - see shared libraries the executable is dependent upon  
+ldconfig - updates local system cache with shared libaries on system  
+    * use when a new shared library is added  
+  
+## Configuratio  
+/etc/ld.so.conf.d/\*.conf - include path for all shared libraries on system  
+  
+# Debian package management  
+  
+/etc/apt - location for apt configuration files (e.g. list of repositories)  
+/etc/apt/sources.list - a repository list that comes with our distro  
+/etc/apt/sources.list.d/\*.list - store all third-party repositories here  
+
+apt update - refresh the list of packages taken from repos  
+apt upgrade - upgrade the packages installed on the system  
+apt dist-upgrade - upgrade to latest distro  
+
+apt purge <package> - remove app AND related configuration files  
+
+apt-cache search <name> - search repos for given package  
+apt-cache show <package-name> -detailed info about package  
+
