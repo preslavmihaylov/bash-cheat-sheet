@@ -136,12 +136,34 @@ ldconfig - updates local system cache with shared libaries on system
 /etc/apt/sources.list - a repository list that comes with our distro  
 /etc/apt/sources.list.d/\*.list - store all third-party repositories here  
 
+## Using apt to manage packages
+apt install <package> - install deb package with dependencies  
+apt install -d <package> - only download package + dependencies, without installing  
+apt install -f - search installed packages and finish installing unconfigured packages  
+    * Used to fix dependency problems from installing with dpkg  
+
 apt update - refresh the list of packages taken from repos  
 apt upgrade - upgrade the packages installed on the system  
 apt dist-upgrade - upgrade to latest distro  
 
+apt remove <package> - remove package without conf files  
 apt purge <package> - remove app AND related configuration files  
 
+## Using apt-cache to search repo of installed packages
 apt-cache search <name> - search repos for given package  
 apt-cache show <package-name> -detailed info about package  
+
+## Using dpkg to manually install .deb packages
+dpkg vs. apt - dpkg only installs package, apt installs package along with dependencies  
+
+dpkg -i (--install) <package> - install a package  
+    * dpkg -i --force-reinstreq - force reinstalling a package (overwrite all config files and package related files)  
+
+dpkg -c (--contents) <package> - show files contained in package (and where they will get installed  
+dpkg -S (--search) <keyword> - search for keyword in all installed packages  
+dpkg -L (--listfiles) <package> - similar to --contents, but for already installed packages  
+dpkg -P (--purge) <package> - remove package along with conf files  
+
+dpkg-reconfigure <package> - run external configuration of package if any and overwrite the existing one  
+    * e.g. postfix package - runs a GUI window after installation for configuring mail server  
 
