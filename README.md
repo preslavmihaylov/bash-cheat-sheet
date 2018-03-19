@@ -87,23 +87,23 @@ fgrep == grep -F
 # Sed stream editor  
 sed - command for manipulating streams  
   
-Basic usage:  
-* sed '\<range\>\<option\>/\<pattern\>/\<flags\>'  
-    * range - define range for sed to operate on  
-        * e.g. % - operate on all lines  
-        * e.g. 2, - operate on lines [2, $)  
-        * e.g. ,5 - operate on lines (^, 5]  
-        * e.g. 2,5 - operate on lines [2, 5]  
-    * option - can be one of the following  
-        * s - substiture matched pattern with something else  
-        * d - delete line where pattern is found  
-        * i - insert after line where pattern matched  
-    * pattern - a single regex expression  
-        * if s option used - use <pattern>/<replaced> instead of simply <pattern>  
-    * flags  
-        * g - global match. Match more than one pattern on a line if applicable.  
-        * c - ask before performing operation  
-        * w <file> - write matched patterns operation to file  
+## Basic usage:  
+sed '\<range\>\<option\>/\<pattern\>/\<flags\>'  
+* range - define range for sed to operate on  
+    * e.g. % - operate on all lines  
+    * e.g. 2, - operate on lines [2, $)  
+    * e.g. ,5 - operate on lines (^, 5]  
+    * e.g. 2,5 - operate on lines [2, 5]  
+* option - can be one of the following  
+    * s - substiture matched pattern with something else  
+    * d - delete line where pattern is found  
+    * i - insert after line where pattern matched  
+* pattern - a single regex expression  
+    * if s option used - use <pattern>/<replaced> instead of simply <pattern>  
+* flags  
+    * g - global match. Match more than one pattern on a line if applicable.  
+    * c - ask before performing operation  
+    * w <file> - write matched patterns operation to file  
   
   
 # Manipulating streams  
@@ -125,7 +125,7 @@ lsusb - info about usb devices
   
 ldd <executable> - see shared libraries the executable is dependent upon  
 ldconfig - updates local system cache with shared libaries on system  
-    * use when a new shared library is added  
+* use when a new shared library is added  
   
 ## Configuratio  
 /etc/ld.so.conf.d/\*.conf - include path for all shared libraries on system  
@@ -140,7 +140,7 @@ ldconfig - updates local system cache with shared libaries on system
 apt install <package> - install deb package with dependencies  
 apt install -d <package> - only download package + dependencies, without installing  
 apt install -f - search installed packages and finish installing unconfigured packages  
-    * Used to fix dependency problems from installing with dpkg  
+* Used to fix dependency problems from installing with dpkg  
 
 apt update - refresh the list of packages taken from repos  
 apt upgrade - upgrade the packages installed on the system  
@@ -157,7 +157,7 @@ apt-cache show <package-name> -detailed info about package
 dpkg vs. apt - dpkg only installs package, apt installs package along with dependencies  
 
 dpkg -i (--install) <package> - install a package  
-    * dpkg -i --force-reinstreq - force reinstalling a package (overwrite all config files and package related files)  
+* dpkg -i --force-reinstreq - force reinstalling a package (overwrite all config files and package related files)  
 
 dpkg -c (--contents) <package> - show files contained in package (and where they will get installed  
 dpkg -S (--search) <keyword> - search for keyword in all installed packages  
@@ -165,7 +165,7 @@ dpkg -L (--listfiles) <package> - similar to --contents, but for already install
 dpkg -P (--purge) <package> - remove package along with conf files  
 
 dpkg-reconfigure <package> - run external configuration of package if any and overwrite the existing one  
-    * e.g. postfix package - runs a GUI window after installation for configuring mail server  
+* e.g. postfix package - runs a GUI window after installation for configuring mail server  
 
 # Red Hat Package management
 yum - analog to apt-get  
