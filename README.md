@@ -167,3 +167,25 @@ dpkg -P (--purge) <package> - remove package along with conf files
 dpkg-reconfigure <package> - run external configuration of package if any and overwrite the existing one  
     * e.g. postfix package - runs a GUI window after installation for configuring mail server  
 
+# Red Hat Package management
+yum - analog to apt-get  
+rpm - analog to dpkg  
+
+/etc/yum.conf - main yum configuration file  
+/etc/yum.repos.d/ - location of yum repositories  
+* gpgcheck - an option of a yum repository. Verifies that a package comes from a given repo with a gpgkey. Security against man in the middle attacks.  
+
+/var/log/yum.log - log file for the yum package manager  
+
+yum update (same as upgrade) == apt-get update && apt-get upgrade  
+yum install == apt-get install  
+yum install --downloadonly - only download package without installing  
+* Downloaded packages are located in /var/cache/yum/(x86\_64/base/packages). (Specified in /etc/yum.conf)  
+
+yumdownloader - yum util tool for downloading packages
+
+yumdownloader --source <package> - download source only  
+yumdownloader --urls <package> - urls from where the package will be downloaded  
+yumdownloader --resolve <package> - download package and dependencies  
+yumdownloader --destdir <dir> <package> - specify destination directory  
+
