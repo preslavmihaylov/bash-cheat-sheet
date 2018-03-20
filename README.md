@@ -127,7 +127,7 @@ ldd <executable> - see shared libraries the executable is dependent upon
 ldconfig - updates local system cache with shared libaries on system  
 * use when a new shared library is added  
   
-## Configuratio  
+## Configuration  
 /etc/ld.so.conf.d/\*.conf - include path for all shared libraries on system  
   
 # Debian package management  
@@ -188,4 +188,28 @@ yumdownloader --source <package> - download source only
 yumdownloader --urls <package> - urls from where the package will be downloaded  
 yumdownloader --resolve <package> - download package and dependencies  
 yumdownloader --destdir <dir> <package> - specify destination directory  
+
+## Using rpm to install .rpm packages
+/var/lib/rpm - location of rpm database
+
+rpm -i (--install) <package> - install rpm package  
+* -v (--verbose) - verbose mode  
+* -h (--hash) - see status bar  
+* --nodeps - ignore dependencies  
+
+rpm -e <package> - remove rpm package  
+
+rpm -q <package> - query for package. Check if installed  
+* -i - detailed info about package  
+* -l - info about installed files on system  
+* -R - see dependencies  
+* -p - provide info about package even if not installed. NOTE: The full path to .rpm file is needed then.  
+
+rpm -V <package> - difference between original package and installed package  
+
+rpm -U <package> - update installed .rpm package to new version (the provided package should be the newer version)/
+If rpm package does not exists, it acts like an installation.
+
+rpm2cpio - archive .rpm package in a cpio. Used to extract rpm packages on a non-redhat system and later manually install.  
+* Use `cpio` command to extract archive in current directory  
 
