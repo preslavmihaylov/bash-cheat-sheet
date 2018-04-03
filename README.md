@@ -213,3 +213,13 @@ If rpm package does not exists, it acts like an installation.
 rpm2cpio - archive .rpm package in a cpio. Used to extract rpm packages on a non-redhat system and later manually install.  
 * Use `cpio` command to extract archive in current directory  
 
+# Environment variables
+set - show bash settings + environment variables  
+env - show environment variables  
+shopt - show bash settings  
+
+PATH - env variable with info about directories to look for executables  
+HIST\_FILE - location of bash history file  
+HISTCONTROL - Bash history options  
+HISTFILESIZE - count of commands to record in history  
+
