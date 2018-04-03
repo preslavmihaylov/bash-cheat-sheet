@@ -23,16 +23,6 @@ Ctrl-r - backwards search
   
 # Useful linux commands  
   
-wc - word count  
-* wc -l - total lines of file  
-  
-cat - concat contents of file  
-* E.g. cat file1 file2 - concatenates output of both files  
-  
-head - show first lines of file  
-  
-tail - show last lines of file  
-  
 grep - search for pattern in file/text stream  
   
 find - find something in the system  
@@ -52,18 +42,51 @@ ls - list contents of directory
   * -a - show all files (including hidden)  
   * -l - long listing (show extended info for file)  
   
-cut - cut file into columns  
-* Options:  
-    * -f<num> - the column to display  
-    * -d<delim> - the delimiter to use  
-* e.g. cut -f1 -d: passwd  
-  
 tee - read from stdin and write to file AND stdout  
 * Usage:  
     * \<command\> | tee \<file1\> \<file2\>...  
 * Useful options:  
     * -a - append instead of overwriting  
+
+# Text utilities
+sort - sort a file alphabetically
+* -n - sort numerically  
+* -k{num} - sort by {num} column  
+
+nl - cat file with line numbers  
+
+wc - word count of file (not only)  
+* -l - total lines of file  
+* -w - count of words  
+* -c - count of characters  
+
+expand - expand the tab width
+* -t {num} - set tab width
+
+cat - concat contents of file  
+* E.g. cat file1 file2 - concatenates output of both files  
   
+head - show first lines of file  
+* -n {num} - show first {num} lines  
+
+tail - show last lines of file  
+* -n {num} - show last {num} lines  
+* -f - follow file being updated real time  
+
+cut - cut file into columns  
+* Options:  
+    * -f {num1},{num2}...{numN} - the columns to display  
+    * -d{delim} - the delimiter to use  
+    * -c {start}-{finish} - show characters in range  
+* e.g. cut -f1 -d: passwd  
+
+paste - concatenate two files side by side  
+join - show only duplicate lines of two files (like joining db)  
+
+uniq - show unique lines of file  
+* -d - show only duplicate lines of file  
+* -D - show only duplicate lines along with redundant ones  
+
 # Grepping  
   
 grep - command for filtering lines from stream  
