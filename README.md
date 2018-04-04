@@ -48,7 +48,14 @@ tee - read from stdin and write to file AND stdout
 * Useful options:  
     * -a - append instead of overwriting  
 
+more - text view cli utility  
+* -d - show small help line  
+* -p - clear screen before opening file  
+
+less - similar to more, but allows moving backwards  
+
 # Text utilities
+
 sort - sort a file alphabetically
 * -n - sort numerically  
 * -k{num} - sort by {num} column  
@@ -66,6 +73,28 @@ expand - expand the tab width
 cat - concat contents of file  
 * E.g. cat file1 file2 - concatenates output of both files  
   
+tac - show contents of file backwards  
+
+split - split file into files named xaa, xab, xac...
+* -a {num} - the count of letters to use for combinations  
+* -b {num} - split by {num} bytes  
+* -l {num} - split by {num} lines  
+
+od - cli octal viewer
+* -d - decimal format  
+* -f - floating point format  
+* -x - hex format  
+
+pr - format file for printing  
+* --columns - format into columns  
+* --header - specify header of file  
+
+fmt -{num} - format a file into {num} character columns  
+
+tr - find and replace symbols in files
+* Usage: tr 'a' 'A' < file.txt  
+* Usage: tr 'a-e' 'A-E' < file.txt  
+
 head - show first lines of file  
 * -n {num} - show first {num} lines  
 
@@ -128,7 +157,10 @@ sed '\<range\>\<option\>/\<pattern\>/\<flags\>'
     * c - ask before performing operation  
     * w <file> - write matched patterns operation to file  
   
-  
+## Options
+* -e - enumerate different patterns to process  
+* -f {file} - read patterns to use from {file} (separated in lines)  
+
 # Manipulating streams  
   
 \> - redirect stdin to file (overwriting it)  
