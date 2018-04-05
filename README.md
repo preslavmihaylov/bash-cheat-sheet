@@ -20,9 +20,33 @@ Ctrl-b - go backwards one character
 Ctrl-p - same as up arrow. Show last executed command  
   
 Ctrl-r - backwards search  
-  
+
 # Useful linux commands  
-  
+
+ls - list files & directories
+* -l - long listing. Additional info with permissions, size, etc.  
+* -a - include hidden files (dotfiles)  
+
+mkdir - create directory  
+* -p - create directory along with path  
+
+cp - copy file/directory
+* -r - recursively copy path  
+* -i - prompt for overwrite  
+* -f - copy force  
+
+mv - move file/directory
+
+
+file - show file type  
+
+stat - additional info about file
+* -f - filesystem information  
+* -t - space-delimited list of info  
+
+touch - create empty file OR if it exists, update timestamp  
+* -t - specify timestamp explicitly  
+
 grep - search for pattern in file/text stream  
   
 find - find something in the system  
@@ -53,6 +77,21 @@ more - text view cli utility
 * -p - clear screen before opening file  
 
 less - similar to more, but allows moving backwards  
+
+# Globbing
+
+> a set of operators for using wild cards when selecting files/dirs
+
+\* - match 0 or more characters
+? - match exactly 1 character
+[a-z] - specify range of characters
+
+## Examples
+
+* ls \*.sh - show all `sh` files  
+* ls \*.?? - show all 2 symbol file extensions  
+* ls [a-c]\*.sh - all `sh` files containing symbols in given range  
+
 
 # Text utilities
 
