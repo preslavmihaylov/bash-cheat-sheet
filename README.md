@@ -52,7 +52,14 @@ grep - search for pattern in file/text stream
 find - find something in the system  
 * Usage: find \<location\> \<flags\>  
 * Flags: -name, -perm, -type  
-  
+* -iname - like -name, but case-insensitive  
+* -exec - perform a command on a find result    
+    * Usage: find <path> <term> -exec <command> {} \;
+
+dd - create iso images  
+* Usage: dd if=<dev name> of=<iso name>  
+* Works in reverse as well  
+
 whereis - find location of binary  
   
 whoami - who is logged on system  
@@ -205,7 +212,26 @@ sed '\<range\>\<option\>/\<pattern\>/\<flags\>'
 \> - redirect stdin to file (overwriting it)  
 \>\> - redirect stdin to file (appending)  
 \| - redirect output of left-hand command as input to right-hand command  
-  
+ 
+# Archiving and Compression utilities
+
+tar - archiving (and compression) utility
+* flags:
+    * -c - create tar archive  
+    * -z - gzip compression  
+    * -j - bzip2 compression  
+    * -t - display contents of archive  
+    * -x - extract archive  
+    * -v - verbose mode  
+    * -f - specify file for given operation  
+
+## Examples
+
+tar -cvfz out.tar.gz in-dir - create gzip archive  
+tar -cvfj out.tar.bz2 in-dir - create bzip2 archive  
+tar -xvfz out.tar.gz . - extract gzip archive  
+tar -xvfj out.tar.gz . - extract bzip2 archive  
+
 # Viewing Hardware Information  
   
 lscpu - info about CPU  
