@@ -211,8 +211,13 @@ sed '\<range\>\<option\>/\<pattern\>/\<flags\>'
   
 \> - redirect stdin to file (overwriting it)  
 \>\> - redirect stdin to file (appending)  
+2\> - redirect stderr to file (overwriting it)  
+2\>&1\> - redirect stderr to stdout to file  
 \| - redirect output of left-hand command as input to right-hand command  
- 
+\< - redirect contents of file to command  
+
+<command> | tee <file> - redirect stdout to file AND show it on screen  
+
 # Archiving and Compression utilities
 
 tar - archiving (and compression) utility
