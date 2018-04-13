@@ -339,6 +339,7 @@ rpm2cpio - archive .rpm package in a cpio. Used to extract rpm packages on a non
 * Use `cpio` command to extract archive in current directory  
 
 # Environment variables
+
 set - show bash settings + environment variables  
 env - show environment variables  
 shopt - show bash settings  
@@ -347,4 +348,40 @@ PATH - env variable with info about directories to look for executables
 HIST\_FILE - location of bash history file  
 HISTCONTROL - Bash history options  
 HISTFILESIZE - count of commands to record in history  
+
+# Processes management
+
+ps - monitor processes  
+* -a - processes for all users  
+* -u - show additional info (like user)  
+* -x - show tty-started processes along with all other processes  
+
+ps -ef == ps -aux
+* the -ef is the unix way, the other - the FreeBSD/Linux way  
+
+pstree - show processes in tree-mode  
+* -a - show additional info (like passed parameters to processes  
+* -p - show PIDs  
+
+kill {PID} - kill a program. By default, sends SIGTERM signal.  
+* -9 (-SIGKILL) - send a SIGKILL signal  
+
+killall {identifier} - attempt to kill all processes related to {identifier}  
+
+pgrep - grep for PIDs related to a given filter (like a process name)  
+
+## SIG types
+
+* SIGHUP - shut down and restart process  
+* SIGINT - interrupt a process from running (can be ignored)  
+* SIGKILL - kill process (can't be ignored)  
+* SIGTERM - kill process, but allow process to clean up resources (Ctrl-C)  
+* SIGSTOP - stop process, not kill (can't ignored).  
+* SIGTSTP - Pause a process and allow it to run in the background (Ctrl-Z)  
+
+## Memory monitoring
+
+free - shows info about RAM memory  
+* -m - show in MB (default is KB)  
+* -h - human-readable format  
 
