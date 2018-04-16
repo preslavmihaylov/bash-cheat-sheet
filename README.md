@@ -351,6 +351,9 @@ HISTFILESIZE - count of commands to record in history
 
 # Processes management
 
+top - task manager-like cli utility for monitoring processes  
+* h - show help while inside program  
+
 ps - monitor processes  
 * -a - processes for all users  
 * -u - show additional info (like user)  
@@ -379,13 +382,21 @@ pgrep - grep for PIDs related to a given filter (like a process name)
 * SIGSTOP - stop process, not kill (can't ignored).  
 * SIGTSTP - Pause a process and allow it to run in the background (Ctrl-Z)  
 
-## Memory monitoring
+# Process Execution Priorities
+
+> Every process has a "nice" level. The lower it is, the higher the priority.  
+> Minimum nice level is -20 and max is +20  
+
+nice - start a process run by default "nicer" (with lower priority)  
+renice [+/-]{modifier} {PID} - change process nice level by [+/-]{modifier}  
+
+# Memory monitoring
 
 free - shows info about RAM memory  
 * -m - show in MB (default is KB)  
 * -h - human-readable format  
 
-## Jobs management
+# Jobs management
 
 Ctrl-Z - move current running command to background in Stopped mode  
 {command} & - execute command in background  
