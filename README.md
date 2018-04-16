@@ -89,9 +89,9 @@ less - similar to more, but allows moving backwards
 
 > a set of operators for using wild cards when selecting files/dirs
 
-\* - match 0 or more characters
-? - match exactly 1 character
-[a-z] - specify range of characters
+\* - match 0 or more characters  
+? - match exactly 1 character  
+[a-z] - specify range of characters  
 
 ## Examples
 
@@ -332,7 +332,7 @@ rpm -q <package> - query for package. Check if installed
 
 rpm -V <package> - difference between original package and installed package  
 
-rpm -U <package> - update installed .rpm package to new version (the provided package should be the newer version)/
+rpm -U <package> - update installed .rpm package to new version (the provided package should be the newer version).
 If rpm package does not exists, it acts like an installation.
 
 rpm2cpio - archive .rpm package in a cpio. Used to extract rpm packages on a non-redhat system and later manually install.  
