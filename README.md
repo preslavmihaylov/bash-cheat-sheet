@@ -385,3 +385,15 @@ free - shows info about RAM memory
 * -m - show in MB (default is KB)  
 * -h - human-readable format  
 
+## Jobs management
+
+Ctrl-Z - move current running command to background in Stopped mode  
+{command} & - execute command in background  
+
+jobs - show current jobs  
+bg {JOB\_ID} - move job to background  
+fg {JOB\_ID} - move job to foreground  
+
+nohup {command} - execute command independently of tty  
+* (won't stop after you exit terminal)  
+
