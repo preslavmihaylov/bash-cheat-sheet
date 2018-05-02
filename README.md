@@ -424,3 +424,15 @@ gdisk - tool for partitioning devices with GPT partition table
 mkfs -t {type} {device} - format {device} with {type} file system type  
 
 /etc/mke2fs.conf - info about possible file system types and what features they provide  
+
+du - see space taken by files and directories
+* -h - human readable format
+* -a - show all files
+* -s - show only root directory
+
+df - show space taken in devices
+* -h - human readable format  
+* -t - show total line  
+
+fsck - check filesystem for corruption and attempt fix  
+* -f - force
