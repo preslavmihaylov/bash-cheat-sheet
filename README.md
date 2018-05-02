@@ -408,3 +408,19 @@ fg {JOB\_ID} - move job to foreground
 nohup {command} - execute command independently of tty  
 * (won't stop after you exit terminal)  
 
+# Filesystems and Partitions
+
+/dev - devices directory
+* hdN - IDE drives  
+* sdN - SATA/SCSI drives  
+
+fdisk - tool for partitioning devices  
+* -l - show devices information  
+* Usage: fdisk {dev} - start partitioning given device through interactive menu  
+
+gdisk - tool for partitioning devices with GPT partition table  
+* Usage: gdisk {dev} - similar to fdisk  
+
+mkfs -t {type} {device} - format {device} with {type} file system type  
+
+/etc/mke2fs.conf - info about possible file system types and what features they provide  
