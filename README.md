@@ -436,3 +436,21 @@ df - show space taken in devices
 
 fsck - check filesystem for corruption and attempt fix  
 * -f - force
+
+# Mounting
+
+mount - shows current mounts on the system
+* same info available in /proc/mounts
+
+mount -t {filesystem type} {device} {mount target location}  - mount device  
+
+mount -a - automatically mount default devices from /etc/fstab  
+
+umount {mount point} - unmount device  
+
+/etc/fstab - default mounts when system boots. Modify to have a specific partition mounted by default  
+* use uuid when defining mounts
+* Template: UUID={uuid} {mount point} {filesystem type} defaults 0 1
+* NOTE: Use tabs instead of spaces when pasting the above line
+
+blkid - show uuid, filesystem type and labels of available devices
