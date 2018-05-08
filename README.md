@@ -454,3 +454,16 @@ umount {mount point} - unmount device
 * NOTE: Use tabs instead of spaces when pasting the above line
 
 blkid - show uuid, filesystem type and labels of available devices
+
+# Manage disk quotas
+
+> A disk quota is a limitation on usage of system resources enforced by sys admins on users and groups
+
+quotacheck -avugc - create initial quota files
+
+edquota -u {user} - edit quota for user
+
+quotaon -p {mounted filesystem} - check if quotas are on on given filesystem  
+quotaon -uagv - turn user and group quotas on  
+
+quota {user} - check quota for user  
