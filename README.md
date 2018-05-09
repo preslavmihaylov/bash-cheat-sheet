@@ -467,3 +467,39 @@ quotaon -p {mounted filesystem} - check if quotas are on on given filesystem
 quotaon -uagv - turn user and group quotas on  
 
 quota {user} - check quota for user  
+
+# File permissions
+
+chmod {XYZ} {file} - change permissions of file
+* X/Y/Z - a digit between 0 and 7. A bitmask representation of rwx permissions.
+* X - user
+* Y - group
+* Z - all
+
+umask - Override default system defined permissions.
+* set at bashrc to override umask value
+* a set of values subtracted from 666 to get default permissions
+* Example: umask = 002; 666 - 002 = 664 --> default permissions: 664
+
+ll - show directory listing + permissions
+
+### Format: 
+
+```
+         d rwx rwx rwx sb
+         - --- --- --- -
+dir flag-|  |   |   |  |
+            |   |   |  |
+      user--|   |   |  |
+                |   |  |
+         group--|   |  |
+                    |  |
+               all--|  |
+                       |
+          sticky bit --|
+
+r - read
+w - write
+x - execute
+```
+
