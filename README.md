@@ -56,12 +56,20 @@ find - find something in the system
 * -exec - perform a command on a find result    
     * Usage: find <path> <term> -exec <command> {} \;
 
+locate - similar to find, but uses a db. Also, searches in the whole system, not a particular dir.  
+* /etc/updatedb.conf - settings about how locate updates its database  
+
+which {cmd} - see the full path to the command you want to execute  
+
+whereis - find all associated files of binary  
+
+type {cmd} - give me info about the type this command is. Alias, binary?
+* -a - all info (binaries + aliases)
+
 dd - create iso images  
 * Usage: dd if=<dev name> of=<iso name>  
 * Works in reverse as well  
 
-whereis - find location of binary  
-  
 whoami - who is logged on system  
   
 pwd - current working directory  
@@ -470,11 +478,12 @@ quota {user} - check quota for user
 
 # File permissions
 
-chmod {XYZ} {file} - change permissions of file
-* X/Y/Z - a digit between 0 and 7. A bitmask representation of rwx permissions.
-* X - user
-* Y - group
-* Z - all
+chmod {ABCD} {file} - change permissions of file
+* A/B/C/D - a digit between 0 and 7. A bitmask representation of rwx permissions.
+* A - special bits (suid, sticky bit)
+* B - user
+* C - group
+* D - all
 
 umask - Override default system defined permissions.
 * set at bashrc to override umask value
@@ -486,20 +495,36 @@ ll - show directory listing + permissions
 ### Format: 
 
 ```
-         d rwx rwx rwx sb
-         - --- --- --- -
-dir flag-|  |   |   |  |
-            |   |   |  |
-      user--|   |   |  |
-                |   |  |
-         group--|   |  |
-                    |  |
-               all--|  |
-                       |
-          sticky bit --|
+           d rwx rwx rwx 
+           - --- --- ---
+extra flag-|  |   |   |
+              |   |   |
+        user--|   |   |
+                  |   |
+           group--|   |
+                      |
+                 all--|
+                     
 
-r - read
-w - write
-x - execute
+extra flag - d for directory. l for symbolic link.
+r - read (4)
+w - write (2)
+x - execute (1)
+
+# Special permissions
+user suid (4). Denoted as s on the execute flag of user permissions.
+group suid (2). Denoted as s on the execute flag of group permissions.
+sticky bit (1). Denoted as s on the execute flag of all permissions.
+
+# set uid - a program with permission to access resources the user can't normally access.
+# sticky bit - restricted deletion. Can only append to file
+
 ```
 
+# Hard & Symbolic links
+
+symlink - just a pointer to the original file.
+hardlink - a pointer to the inode pointing to the original file.
+
+ln -s - create symbolic link
+ln - create hard link
